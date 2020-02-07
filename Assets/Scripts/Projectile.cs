@@ -25,7 +25,8 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy Related")
+        GameObject otherObject = other.gameObject;
+        if (otherObject.GetComponent<Attacker>())
         {
             Destroy(gameObject);
         }
