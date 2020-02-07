@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4162087216031422620}
   m_Layer: 0
   m_Name: Gravestone
-  m_TagString: Defender
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7b792d739bea2438506720b7f1fa81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 50
+  hitPoints: 10
   deathVFX: {fileID: 0}
 --- !u!61 &7091608507366640547
 BoxCollider2D:
