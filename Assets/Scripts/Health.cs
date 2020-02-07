@@ -8,17 +8,13 @@ public class Health : MonoBehaviour
 	[SerializeField] int hitPoints;
 	[SerializeField] GameObject deathVFX;
 
-	private void OnTriggerEnter2D(Collider2D other)
+	public void GetHit(int damageAmmount)
 	{
-		if (other.tag != tag)
-		{
-			Projectile projectileDamage = other.gameObject.GetComponent<Projectile>();
+		hitPoints -= damageAmmount;
 
-			hitPoints -= projectileDamage.SetDamage();
-
-			CheckForDestroy();
-		}
+		CheckForDestroy();
 	}
+
 	private void CheckForDestroy()
 	{
 		if (hitPoints <= 0)
@@ -30,13 +26,12 @@ public class Health : MonoBehaviour
 			TriggerDeathVFX();
 
 			Destroy(gameObject, 2);
-
-			Debug.Log("Got this far");
 		}
 	}
 
 	private void TriggerDeathVFX()
 	{
+		if (!deathVFX) { return; }
 		GameObject deathVFXParticles = Instantiate(deathVFX, transform.position, Quaternion.identity);
 		Destroy(deathVFXParticles, 2f);
 	}
