@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4224532975988923325}
-  - component: {fileID: 4224532975988923323}
-  - component: {fileID: 4059656422190873103}
-  - component: {fileID: 7780899513867550177}
-  - component: {fileID: 2190919802801425736}
   - component: {fileID: -4054768595153786923}
+  - component: {fileID: 2190919802801425736}
+  - component: {fileID: 7780899513867550177}
+  - component: {fileID: 4059656422190873103}
+  - component: {fileID: 4224532975988923323}
   m_Layer: 0
   m_Name: Wood Guy
-  m_TagString: Player Related
+  m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,25 +36,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4224532975988923323
-Animator:
-  serializedVersion: 3
+--- !u!114 &-4054768595153786923
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4224532975988923322}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 38df5bd64be358c43a66e4317728b03b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d138f4a3825ec46a47807801bb89b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starCost: 20
+--- !u!114 &2190919802801425736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224532975988923322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7b792d739bea2438506720b7f1fa81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 10
+  deathVFX: {fileID: 0}
+--- !u!114 &7780899513867550177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224532975988923322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa474fcb621dc14aa08455ec1e78368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 678940887540937985, guid: 4af937b9dce0cce4182355cfce980354,
+    type: 3}
 --- !u!61 &4059656422190873103
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81,47 +103,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7780899513867550177
-MonoBehaviour:
+--- !u!95 &4224532975988923323
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4224532975988923322}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa474fcb621dc14aa08455ec1e78368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 678940887540937985, guid: 4af937b9dce0cce4182355cfce980354,
-    type: 3}
---- !u!114 &2190919802801425736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4224532975988923322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7b792d739bea2438506720b7f1fa81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitPoints: 10
-  deathVFX: {fileID: 0}
---- !u!114 &-4054768595153786923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4224532975988923322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d138f4a3825ec46a47807801bb89b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starCost: 20
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38df5bd64be358c43a66e4317728b03b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8098477868597521979
 GameObject:
   m_ObjectHideFlags: 0

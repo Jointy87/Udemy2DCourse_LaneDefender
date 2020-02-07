@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 941094170075997357}
+  - component: {fileID: -6005564069157943312}
+  - component: {fileID: 4811535632876629698}
   - component: {fileID: 7091608507366640547}
   - component: {fileID: 4162087216031422620}
-  - component: {fileID: 4811535632876629698}
-  - component: {fileID: -6005564069157943312}
   m_Layer: 0
   m_Name: Gravestone
-  m_TagString: Untagged
+  m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +35,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6005564069157943312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699504784778229421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d138f4a3825ec46a47807801bb89b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starCost: 50
+--- !u!114 &4811535632876629698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699504784778229421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7b792d739bea2438506720b7f1fa81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 50
+  deathVFX: {fileID: 0}
 --- !u!61 &7091608507366640547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -80,33 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4811535632876629698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699504784778229421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7b792d739bea2438506720b7f1fa81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitPoints: 50
-  deathVFX: {fileID: 0}
---- !u!114 &-6005564069157943312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699504784778229421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d138f4a3825ec46a47807801bb89b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starCost: 50
 --- !u!1 &8174624502177645734
 GameObject:
   m_ObjectHideFlags: 0
