@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 	// Parameters
-	[SerializeField] GameObject[] enemies;
+	[SerializeField] Attacker[] enemies;
 	[SerializeField] float spawnIntMin;
 	[SerializeField] float spawnIntMax;
 
@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
 	{
 		enemyToSpawn = Random.Range(0, enemies.Length);
 
-		GameObject newAttacker = 
+		Attacker newAttacker = 
 		Instantiate(enemies[enemyToSpawn], 
 			transform.position, Quaternion.identity);
 
