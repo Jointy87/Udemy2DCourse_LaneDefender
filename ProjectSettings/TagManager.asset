@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Player Related
-  - Enemy Related
+  - Defender
+  - Attacker
+  - Defender Projectile
   layers:
   - Default
   - TransparentFX
