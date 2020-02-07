@@ -7,6 +7,7 @@ TagManager:
   - Defender
   - Attacker
   - Defender Projectile
+  - Wall
   layers:
   - Default
   - TransparentFX
