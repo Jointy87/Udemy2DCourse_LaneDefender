@@ -11,6 +11,10 @@ public class Attacker : MonoBehaviour
 	GameObject currentTarget;
 	Animator animator;
 
+	private void Awake()
+	{
+		FindObjectOfType<LevelController>().AddToEnemyCount();
+	}
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
@@ -34,12 +38,6 @@ public class Attacker : MonoBehaviour
 		currentSpeed = speed;
 	}
 
-	public void ActivateCollider()
-	{
-		Collider2D myCollider = GetComponent<Collider2D>();
-		myCollider.enabled = true;
-	}
-
 	public void Attack(GameObject target)
 	{
 		animator.SetBool("isAttacking", true);
@@ -54,6 +52,15 @@ public class Attacker : MonoBehaviour
 		if(health)
 		{
 			health.GetHit(attackDamage);
+		}
+	}
+
+	private void OnDestroy()
+	{
+		LevelController levelController = FindObjectOfType<LevelController>();
+		if (levelController != null)
+		{
+			levelController.SubtractFromEnemyCount();
 		}
 	}
 }

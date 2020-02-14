@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
 
 			TriggerDeathVFX();
 
-			Destroy(gameObject, 2);
+			Destroy(gameObject, 1);
 		}
 	}
 

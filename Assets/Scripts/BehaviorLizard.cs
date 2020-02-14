@@ -13,4 +13,10 @@ public class BehaviorLizard : MonoBehaviour
             GetComponent<Attacker>().Attack(otherObject);
         }
     }
+
+    public void ActivateCollider()
+    {
+        Collider2D myCollider = GetComponent<Collider2D>();
+        myCollider.enabled = true;
+    }
 }

@@ -5,30 +5,56 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    //Parameters
-    [SerializeField] int loadTime;
+	//Parameters
+	[SerializeField] int loadTime;
 
-    int currentSceneIndex;
+	int currentSceneIndex;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+	// Start is called before the first frame update
+	void Start()
+	{
+		//Time.timeScale = 1;
+		Debug.Log(Time.timeScale);
 
-        if(currentSceneIndex == 0)
-        {
-            StartCoroutine(LoadTimer());
-        }
-    }
+		currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-    IEnumerator LoadTimer()
-    {
-        yield return new WaitForSeconds(loadTime);
-        LoadNextScene();
-    }
+		if(currentSceneIndex == 0)
+		{
+			StartCoroutine(LoadTimer());
+		}
+	}
 
-    public void LoadNextScene()
-    {
-        SceneManager.LoadSceneAsync(currentSceneIndex + 1);
-    }
+	IEnumerator LoadTimer()
+	{
+		yield return new WaitForSeconds(loadTime);
+		LoadNextScene();
+	}
+
+	public void LoadNextScene()
+	{
+		SceneManager.LoadSceneAsync(currentSceneIndex + 1);
+	}
+
+	public void LoadGameOverScene()
+	{
+		SceneManager.LoadSceneAsync("Game Over Screen");
+	}
+
+	public void ReloadScene()
+	{
+		Time.timeScale = 1;
+		SceneManager.LoadSceneAsync(currentSceneIndex);
+	}
+
+	public void LoadMainMenu()
+	{
+		Time.timeScale = 1;
+		SceneManager.LoadSceneAsync("Start Screen");
+	}
+
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
+
 }

@@ -32,4 +32,11 @@ public class EnemySpawner : MonoBehaviour
 
 		newAttacker.transform.parent = transform;
 	}
+
+	public void DisableSpawning()
+	{
+		keepSpawning = false;
+
+		Debug.Log("Stopped Spawning");
+	}
 }

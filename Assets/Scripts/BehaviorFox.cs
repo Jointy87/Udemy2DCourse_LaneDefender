@@ -12,7 +12,7 @@ public class BehaviorFox : MonoBehaviour
         {
             Jump();
         }
-        if (otherObject.GetComponent<Defender>())
+        else if (otherObject.GetComponent<Defender>())
         {
             GetComponent<Attacker>().Attack(otherObject);
         }
