@@ -13,9 +13,6 @@ public class LevelLoader : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		//Time.timeScale = 1;
-		Debug.Log(Time.timeScale);
-
 		currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
 		if(currentSceneIndex == 0)
@@ -50,6 +47,10 @@ public class LevelLoader : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		SceneManager.LoadSceneAsync("Start Screen");
+	}
+	public void LoadOptions()
+	{
+		SceneManager.LoadSceneAsync("Options Screen");
 	}
 
 	public void QuitGame()
