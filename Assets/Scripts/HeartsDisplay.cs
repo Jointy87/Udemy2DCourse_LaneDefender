@@ -11,7 +11,7 @@ public class HeartsDisplay : MonoBehaviour
 
 	void Start()
 	{
-		//CheckDifficulty();
+		CheckDifficulty();
 
 		int[] heartContainers = new int [heartsAmount];
 
@@ -45,12 +45,11 @@ public class HeartsDisplay : MonoBehaviour
 			FindObjectOfType<LevelController>().StartLoseSequence();
 		}
 	}
-	/*
+
 	private void CheckDifficulty()
 	{
 		int diffSetting = PlayerPrefsController.GetDifficulty();
 		Debug.Log(diffSetting);
 		heartsAmount += diffSetting;
 	}
-	*/
 }

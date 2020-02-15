@@ -34,5 +34,7 @@ public class Health : MonoBehaviour
 		if (!deathVFX) { return; }
 		GameObject deathVFXParticles = Instantiate(deathVFX, transform.position, Quaternion.identity);
 		Destroy(deathVFXParticles, 2f);
+
+		deathVFXParticles.transform.parent = transform;
 	}
 }

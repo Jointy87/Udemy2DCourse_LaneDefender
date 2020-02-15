@@ -1,12 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DefenderButton : MonoBehaviour
 {
 	//Parameters
 	[SerializeField] Defender defenderPrefab;
 	int defenderCost;
+
+	private void Start()
+	{
+		defenderCost = defenderPrefab.PassStarCost();
+
+		Text priceTag = GetComponentInChildren<Text>();
+		priceTag.text = defenderCost.ToString();
+		
+	}
 
 	public void OnMouseDown()
 	{
@@ -19,8 +29,6 @@ public class DefenderButton : MonoBehaviour
 		GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
 		FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPrefab);
-
-		defenderCost = defenderPrefab.PassStarCost();
 
 		FindObjectOfType<DefenderSpawner>().SetDefenderCost(defenderCost);
 	}

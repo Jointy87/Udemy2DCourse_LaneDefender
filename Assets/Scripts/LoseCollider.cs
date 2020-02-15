@@ -11,6 +11,7 @@ public class LoseCollider : MonoBehaviour
 		if(otherObject.GetComponent<Attacker>())
 		{
 			SubstractLife();
+			Destroy(otherObject, 1);
 		}   
 	}
 

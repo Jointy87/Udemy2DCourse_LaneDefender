@@ -9,7 +9,7 @@ public class OptionsController : MonoBehaviour
 	[SerializeField] Slider volumeSlider;
 	[SerializeField] float defaultVolume;
 	[SerializeField] Slider diffSlider;
-	[SerializeField] float defaultDiff;
+	[SerializeField] int defaultDiff; //float to int
 
 	int diffSliderValue;
 
@@ -17,7 +17,7 @@ public class OptionsController : MonoBehaviour
 	{
 		volumeSlider.value = PlayerPrefsController.GetMasterVolume();
 		diffSlider.value = PlayerPrefsController.GetDifficulty();
-		//diffSliderValue = (int)diffSlider.value;
+		diffSliderValue = (int)diffSlider.value; //to convert float to int
 
 	}
 
@@ -33,14 +33,17 @@ public class OptionsController : MonoBehaviour
 		{
 			Debug.LogWarning("No music player found!");
 		}
+
+		diffSliderValue = (int)diffSlider.value; //to convert float to int
 	}
 
 	public void SaveAndExit()
 	{
 		PlayerPrefsController.SetMasterVolume(volumeSlider.value);
-		PlayerPrefsController.SetDifficulty(diffSlider.value);
+		PlayerPrefsController.SetDifficulty(diffSliderValue); //diffSlider.value to diffSliderValue (float to int)
+		Debug.Log("Slider value is " + diffSlider.value);
 		FindObjectOfType<LevelLoader>().LoadMainMenu();
-		Debug.Log(PlayerPrefsController.GetDifficulty());
+		Debug.Log("Difficulty is " + PlayerPrefsController.GetDifficulty());
 	}
 
 	public void SetDefaults()

@@ -9,8 +9,6 @@ public class Projectile : MonoBehaviour
 	[SerializeField] float spinSpeed;
 	[SerializeField] int projectileDamage;
 
-
-	// Update is called once per frame
 	void Update()
 	{
 		transform.Translate(Vector2.right * Time.deltaTime * projectileSpeed, Space.World);

@@ -7,7 +7,6 @@ public class Shooter : MonoBehaviour
 	//Parameters
 	[SerializeField] GameObject projectile;
 
-	GameObject projectileShot;
 	EnemySpawner spawnerInMyLane;
 	Animator animator;
 
@@ -61,8 +60,10 @@ public class Shooter : MonoBehaviour
 
 	public void FireProjectile()
 	{
-		projectileShot = Instantiate(projectile, 
+		GameObject projectileShot = Instantiate(projectile, 
 			new Vector2(transform.position.x, transform.position.y), 
 			Quaternion.identity);
+
+		projectileShot.transform.parent = transform;
 	}
 }
